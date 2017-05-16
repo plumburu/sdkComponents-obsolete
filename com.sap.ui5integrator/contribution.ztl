@@ -1,0 +1,15 @@
+class com.sap.ui5integrator.Receiver extends Component {
+
+
+
+/* Sets the param1. */
+	void setparm1(/* param1  String  */  String text) {*
+		this.parm1 = text;
+	*}	
+
+	/* Returns the  parm1 . */
+	String getparm1() {*
+		return this.parm1;
+	*}
+	
+	}
