@@ -12,4 +12,15 @@ class com.sap.ui5integrator.Receiver extends Component {
 		return this.parm1;
 	*}
 	
+	/* Sets the Origin URL  */
+	void setURL(/* URL  String  */  String text) {*
+		this.url = text;
+	*}	
+
+	/* Returns the  URL . */
+	String getURL() {*
+		return this.url;
+	*}
+	
+	
 	}

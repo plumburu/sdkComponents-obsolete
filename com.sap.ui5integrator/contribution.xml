@@ -8,9 +8,11 @@
 	<component id="Receiver" title="iframe Receiver" icon="res/icon.png"
 		handlerType="div" modes="commons m"
 		propertySheetPath="res/additional_properties_sheet/additional_properties_sheet.html"
-		group="">
+		group="TECHNICAL_COMPONENTS">
 		<requireJs modes="commons m">res/js/component</requireJs>
-		<property id="onclick" title="On Click" type="ScriptText"
+				<property id="onparameterschanged" title="On Parameters Changed" type="ScriptText"
+			group="Events" />
+				<property id="onreloadrequest" title="On Reload Request" type="ScriptText"
 			group="Events" />
 
 		<property id="parm1" title="Input Parameter" type="String"
