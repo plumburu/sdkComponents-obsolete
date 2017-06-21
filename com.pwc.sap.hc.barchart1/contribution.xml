@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.pwc.sap.hc.barchart1"
+	title="Design Studio SDK Extension bar chart of Highchart component"
+	version="1.0"
+	vendor="PwC">
+	<component
+		id="BarChart1"
+		title="Bar Chart1"
+		icon="res/icon.png"
+		handlerType="div"
+    	modes="commons m"
+		propertySheetPath="res/additional_properties_sheet/additional_properties_sheet.html"
+		databound="true">
+		<requireJs modes="commons m">res/js/component</requireJs>
+        <jsInclude>res/js/highcharts.js</jsInclude>
+        <jsInclude>res/js/resultsetwrapper.js</jsInclude>
+	    <property id="dataResultCellSet" 
+            type="ResultCellSet" 
+            title="Data Selection" 
+            tooltip="Optional - Select certain rows or columns of Query Results" 
+            group="DataBinding"/> 
+	   	<property id="barChartType" title="Barchart type" type="Text" group="Display">
+	     	<possibleValue>Vertical</possibleValue>
+			<possibleValue>Horizontal</possibleValue>
+	   	</property>
+	   	<property
+            id="tooltip"
+            title="Tooltip"
+            type="Object"
+            group="Tooltip">
+            <property id="headerFormat" type="String" title="Tooltip Header" />
+            <property id="pointFormat" type="String" title="Tooltip Footer" />
+            <property id="shared" type="boolean" title="Shared" />
+             <property id="followPointer" type="boolean" title="followPointer" />
+        </property>
+        <property
+            id="xAxis"
+            title="xAxis"
+            type="Text"
+            group="Display"/>
+	    <property
+            id="yAxis"
+            title="yAxis"
+            type="Text"
+            group="Display"/>
+        <property
+	        id="title"
+	        title="Title"
+	        type="Text"
+	        group="Display"/>
+	    <property
+	        id="showTotals"
+	        title="Show totals"
+	        type="boolean"
+	        group="Display"/>
+	      <property
+	        id="showTitle"
+	        title="Show title"
+	        type="boolean"
+	        group="Display"/>   
+	      <property
+	        id="showGridlines"
+	        title="Show gridlines "
+	        type="boolean"
+	        group="Display"/>    
+	     <property
+	        id="showXAxis"
+	        title="Show x axis"
+	        type="boolean"
+	        group="Display"/>   
+	       
+		  <property
+	        id="showYAxis"
+	        title="Show y axis"
+	        type="boolean"
+	        group="Display"/>   
+	               
+	     <property
+	        id="showlegend"
+	        title="Show legend"
+	        type="boolean"
+	        group="Display"/>
+	    
+	    <property
+	        id="subtitle"
+	        title="Subtitle"
+	        type="Text"
+	        group="Display"/>
+	    <property
+	        id="titleColor"
+	        title="Title color"
+	        type="Color"
+	        group="Display"
+			bindable="true"/>
+		<property
+			id="subtitleColor"
+			title="Subtitle Color"
+			type="Color"
+			group="Display"
+			bindable="true"/>
+		<property
+            id="selectedKeys"
+            title="Selected Keys"
+            type="String"
+            visible="false"/>
+        <property
+			id="onclick"
+			title="On Click"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+		    <defaultValue property="barChartType">Vertical</defaultValue>
+			<defaultValue property="LEFT_MARGIN">20</defaultValue>
+			<defaultValue property="TOP_MARGIN">20</defaultValue>		
+			<defaultValue property="WIDTH">800</defaultValue>
+			<defaultValue property="HEIGHT">400</defaultValue>
+			<defaultValue property="title">Bar Chart</defaultValue>
+			<defaultValue property="subtitle">Subtitle</defaultValue>
+			<defaultValue property="titleColor">black</defaultValue>
+			<defaultValue property="subtitleColor">grey</defaultValue>
+		    <defaultValue property="showTotals">false</defaultValue>
+			<defaultValue property="showlegend">true</defaultValue>
+			<defaultValue property="showTitle">true</defaultValue>
+			<defaultValue property="showGridlines">true</defaultValue>
+			<defaultValue property="showXAxis">true</defaultValue>
+			<defaultValue property="showYAxis">true</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

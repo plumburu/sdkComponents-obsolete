@@ -1,0 +1,148 @@
+class com.pwc.sap.hc.barchart.BarChart extends Component {
+String getTitleColor() {*
+		return this.titleColor;
+	*}
+
+	void setTitleColor( String newColor) {*
+		this.titleColor = newColor;
+	*}
+
+	String getSubtitleColor() {*
+		return this.subtitleColor;
+	*}
+
+	void setSubtitleColor( String newColor) {*
+		this.subtitleColor = newColor;
+	*}
+	String getTitle() {*
+		return this.title;
+	*}
+
+    void setTitle( String newTitle) {*
+		this.title = newTitle;
+	*}
+	void setSubtitle(String newTitle) {*
+		this.subtitle = newTitle;
+	*}
+	
+    String getSubtitle() {*
+		return this.subtitle;
+	*}
+	String getShowlegend() {*
+		return this.showlegend;
+	*}
+
+	void setShowlegend( boolean newValue) {*
+		this.showlegend = newValue;
+	*}
+	
+    String getShowGridlines() {*
+		return this.showGridlines;
+	*}
+
+	void setShowGridlines( boolean newValue) {*
+		this.showGridlines = newValue;
+	*}
+	void setXAxisTitle(String newTitle) {*
+		this.xAxisTitle = newTitle;
+	*}
+	
+     String getXAxisTitle() {*
+		return this.xAxisTitle;
+	*}
+	
+	String getShowXAxisTitle() {*
+		return this.showXAxisTitle;
+	*}
+
+	void setShowXAxisTitle( boolean newValue) {*
+		this.showXAxisTitle = newValue;
+	*}
+	
+	String getShowXAxis() {*
+		return this.showXAxis;
+	*}
+
+	void setShowXAxis( boolean newValue) {*
+		this.showXAxis = newValue;
+	*}
+	
+	void setYAxisTitle(String newTitle) {*
+		this.yAxisTitle = newTitle;
+	*}
+	
+     String getYAxisTitle() {*
+		return this.yAxisTitle;
+	*}
+	
+	String getShowYAxisTitle() {*
+		return this.showYAxisTitle;
+	*}
+
+	void setShowYAxisTitle( boolean newValue) {*
+		this.showYAxisTitle = newValue;
+	*}
+	
+	String getShowYAxis() {*
+		return this.showYAxis;
+	*}
+
+	void setShowYAxis( boolean newValue) {*
+		this.showYAxis = newValue;
+	*}
+	
+	String getBarchartType() {*
+		return this.barChartType;
+	*}
+
+	void setBarchartType( boolean newValue) {*
+		this.barChartType = newValue;
+	*}
+	
+	/* filter the data source by using the selected item in drop down */
+    void filter(/* keyWord */ String keyWord) {*
+        this.dataResultCellSet = keyWord;
+    *}
+	
+	/* Returns the current click point of the clicking event. */
+    String getSelectedKeys() {*
+        return this.selectedKeys;
+    *}
+    
+     String getHeaderFormat() {*
+         return this.tooltip.headerFormat;
+     *}
+     void setHeaderFormat(String value) {*
+         var tooltipVar = this.tooltip || {};
+         tooltipVar.headerFormat = value;
+         this.tooltip = tooltipVar;
+     *}
+     
+     String getPointFormat() {*
+         return this.tooltip.pointFormat;
+     *}
+     void setPointFormat( String value) {*
+         var tooltipVar = this.tooltip || {};
+         tooltipVar.pointFormat = value;
+         this.tooltip = tooltipVar;
+     *}
+     
+     String getUseHTML() {*
+         return this.tooltip.useHTML;
+     *}
+     void setUseHTML( String value) {*
+         var tooltipVar = this.tooltip || {};
+         tooltipVar.useHTML = value;
+         this.tooltip = tooltipVar;
+     *}
+     
+     boolean getShared() {*
+         return this.tooltip.shared;
+     *}
+     void setShared( boolean value) {*
+         var tooltipVar = this.tooltip || {};
+         tooltipVar.shared = value;
+         this.tooltip = tooltipVar;
+     *}
+	
+}
