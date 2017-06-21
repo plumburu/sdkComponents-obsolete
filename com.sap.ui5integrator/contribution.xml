@@ -1,33 +1,304 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdkExtension
 	xmlns="http://www.sap.com/bi/zen/sdk"
-	id="com.sap.ui5integrator"
-	title="iframe Intergrator"
+	id="com.sap.sample.ui5"
+	title="Design Studio SDK Extension Sample SAPUI5"
 	version="16.4"
 	vendor="SAP">
-	<component id="Receiver" title="iframe Receiver" icon="res/icon.png"
-		handlerType="div" modes="commons m"
-		propertySheetPath="res/additional_properties_sheet/additional_properties_sheet.html"
-		group="TECHNICAL_COMPONENTS">
-		<requireJs modes="commons m">res/js/component</requireJs>
-				<property id="onparameterschanged" title="On Parameters Changed" type="ScriptText"
-			group="Events" />
-				<property id="onreloadrequest" title="On Reload Request" type="ScriptText"
-			group="Events" />
-
-		<property id="parm1" title="Input Parameter" type="String"
-			group="Display">
-
-
-
-
-		</property>
-		<property id="url" type="String" title="Origin URL"></property>
+	<group
+		id="sapui5"
+		title="SAP UI5 Custom Components"/>
+	<component
+		id="ApplicationHeader"
+		title="Application Header"
+		handlerType="sapui5"
+		icon="res/applicationheader.png"
+		group="sapui5">
+		<jsInclude>res/js/components.js</jsInclude>
+		<property
+			id="displayLogoff"
+			title="Display Logoff"
+			tooltip="If set to true, the logoff area will be displayed at the right hand side of the application header."
+			type="boolean"
+			bindable="true"/>
+		<property
+			id="displayWelcome"
+			title="Display Welcome"
+			tooltip="By default, set to true and dislpays the welcome text."
+			type="boolean"
+			bindable="true"/>
+		<property
+			id="userName"
+			title="User Name"
+			tooltip="User name that will be displayed beside the welcome text."
+			type="String"
+			bindable="true"/>
+		<property
+			id="logoSrc"
+			title="Logo Source"
+			tooltip="Path (src) to the logo icon to be displayed in the application header."
+			type="Url"
+			bindable="true"/>
+		<property
+			id="logoText"
+			title="Logo Text"
+			tooltip="The text that will be displayed beside the logo in the application header. This property is optional."
+			type="String"
+			bindable="true"/>
+		<property
+			id="onlogoff"
+			title="On Logoff"
+			tooltip="Fires an event to log off the user from the application."
+			group="Events"
+			type="ScriptText"
+			bindable="true"/>
+		<initialization>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="LEFT_MARGIN">0</defaultValue>
+			<defaultValue property="RIGHT_MARGIN">0</defaultValue>
+			<defaultValue property="WIDTH">auto</defaultValue>
+			<defaultValue property="HEIGHT">38</defaultValue>
+			<defaultValue property="displayWelcome">true</defaultValue>
+		</initialization>
+	</component>
+	<component
+		id="ColorPicker"
+		title="Color Picker"
+		handlerType="sapui5"
+		icon="res/colorpicker.png"
+		group="sapui5">
+		<jsInclude>res/js/components.js</jsInclude>
+		<property
+			id="colorString"
+			title="Color"
+			type="Color"
+			tooltip="This is the import-parameter of the ColorPicker. As input-parameter, it can be a Hexadecimal string (#FFFFFF), a RGB-string rgb(255,255,255), a HSV-string hsv(360,100,100), or a CSS-colorname 'red'. As output-parameter it is a RGB-string containing the current color."
+			bindable="true"/>
+		<property
+			id="onColorChange"
+			title="On Color Change"
+			type="ScriptText"/>
 		<initialization>
 			<defaultValue property="LEFT_MARGIN">40</defaultValue>
 			<defaultValue property="TOP_MARGIN">40</defaultValue>
-			<defaultValue property="WIDTH">100</defaultValue>
-			<defaultValue property="HEIGHT">100</defaultValue>
+			<defaultValue property="WIDTH">270</defaultValue>
+			<defaultValue property="HEIGHT">134</defaultValue>
+			<defaultValue property="colorString">red</defaultValue>
+		</initialization>
+	</component>
+	<component
+		id="FormattedTextView"
+		title="Formatted Text View"
+		handlerType="sapui5"
+		icon="res/formattedtextview.png"
+		group="sapui5">
+		<jsInclude>res/js/components.js</jsInclude>
+		<property
+			id="htmlText"
+			title="HTML Text"
+			tooltip="Text with placeholders"
+			type="String"
+			bindable="true"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">270</defaultValue>
+			<defaultValue property="HEIGHT">20</defaultValue>
+		</initialization>
+	</component>
+	<component
+		id="Paginator"
+		title="Paginator"
+		handlerType="sapui5"
+		icon="res/paginator.png"
+		group="sapui5">
+		<jsInclude>res/js/components.js</jsInclude>
+		<property
+			id="currentPage"
+			title="Current Page"
+			tooltip="Represents the current page number."
+			type="int"
+			bindable="true"/>
+		<property
+			id="numberOfPages"
+			title="Number of Pages"
+			tooltip="Represents the overall number of pages that are embedded into the parent control."
+			type="int"
+			bindable="true"/>
+		<property
+			id="onPageChange"
+			title="On Page Change"
+			tooltip="Event is fired when the user navigates to another page by selecting it directly, or by jumping forward or backward."
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">270</defaultValue>
+			<defaultValue property="HEIGHT">20</defaultValue>
+			<defaultValue property="numberOfPages">3</defaultValue>
+		</initialization>
+	</component>
+	<component
+		id="ProgressIndicator"
+		title="Progress Indicator"
+		handlerType="sapui5"
+		icon="res/progressindicator.png"
+		group="sapui5">
+		<jsInclude>res/js/components.js</jsInclude>
+		<property
+			id="barColor"
+			title="Bar Color"
+			tooltip="The color of the bar."
+			type="String">
+			<possibleValue>CRITICAL</possibleValue>
+			<possibleValue>NEGATIVE</possibleValue>
+			<possibleValue>NEUTRAL</possibleValue>
+			<possibleValue>POSITIVE</possibleValue>
+		</property>
+		<property
+			id="displayValue"
+			title="Display Value"
+			tooltip="The text value to be displayed in the bar."
+			type="String"
+			bindable="true"/>
+		<property
+			id="enabled"
+			title="Enabled"
+			tooltip="Switches enabled state of the control. Disabled fields have different colors and can not be focused."
+			type="boolean"
+			bindable="true"/>
+		<property
+			id="percentValue"
+			title="Percent Value"
+			tooltip="The numerical value for the displayed length of the progress bar."
+			type="int"
+			bindable="true"/>
+		<property
+			id="showValue"
+			title="Show Value"
+			tooltip="Specifies whether the current value shall be rendered inside the bar."
+			type="boolean"
+			bindable="true"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">270</defaultValue>
+			<defaultValue property="HEIGHT">20</defaultValue>
+			<defaultValue property="barColor">NEUTRAL</defaultValue>
+			<defaultValue property="enabled">true</defaultValue>
+			<defaultValue property="showValue">true</defaultValue>
+		</initialization>
+	</component>
+	<component
+		id="RatingIndicator"
+		title="Rating Indicator"
+		handlerType="sapui5"
+		icon="res/ratingindicator.png"
+		group="sapui5">
+		<jsInclude>res/js/components.js</jsInclude>		
+		<property
+			id="editable"
+			title="Editable"
+			tooltip="Value 'true' is required for changes on the rating symbols."
+			type="boolean"
+			bindable="true"/>
+		<property
+			id="iconHovered"
+			title="Icon Hovered"
+			tooltip="The URI to the image which is displayed when the mouse hovers onto a rating symbol. If used, a requirement is that all custom icons need to have the same size. Note that when this attribute is used also the other icon attributes need to be set."
+			type="Url"
+			bindable="true"/>
+		<property
+			id="iconSelected"
+			title="Icon Selected"
+			tooltip="The URI to the image which shall be displayed for all selected rating symbols. Note that when this attribute is used, also the other icon attributes need to be set."
+			type="Url"
+			bindable="true"/>
+		<property
+			id="iconUnselected"
+			title="Icon Unselected"
+			tooltip="The URI to the image which shall be displayed for all unselected rating symbols. If this attribute is used, a requirement is that all custom icons need to have the same size. Note that when this attribute is used also the other icon attributes need to be set."
+			type="Url"
+			bindable="true"/>
+		<property
+			id="maxValue"
+			title="Max Value"
+			tooltip="The number of displayed rating symbols"
+			type="int"
+			bindable="true"/>
+		<property
+			id="value"
+			title="Value"
+			tooltip="The number of displayed rating symbols"
+			type="float"
+			bindable="true"/>
+		<property
+			id="onChange"
+			title="On Change"
+			tooltip="The event is fired when the user has done a rating."
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="editable">true</defaultValue>
+			<defaultValue property="maxValue">5</defaultValue>
+		</initialization>
+	</component>
+	<component
+		id="Slider"
+		title="Slider"
+		icon="res/slider.png"
+		handlerType="sapui5"
+		group="sapui5">
+		<jsInclude>res/js/components.js</jsInclude>
+		<property
+			id="min"
+			title="Min"
+			type="float"
+			bindable="true"/>
+		<property
+			id="max"
+			title="Max"
+			type="float"
+			bindable="true"/>
+		<property
+			id="value"
+			title="Value"
+			type="float"
+			bindable="true"/>
+		<property
+			id="totalUnits"
+			title="TotalUnits"
+			type="int"
+			bindable="true"/>
+		<property
+			id="vertical"
+			title="Vertical"
+			type="boolean"
+			bindable="true"/>
+		<property
+			id="smallStepWidth"
+			title="SmallStepWidth"
+			type="float"
+			bindable="true"/>
+		<property
+			id="onChange"
+			title="On Change"
+			type="ScriptText"
+			group="Events"/>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">300</defaultValue>
+			<defaultValue property="HEIGHT">30</defaultValue>
+			<defaultValue property="min">0</defaultValue>
+			<defaultValue property="max">100</defaultValue>
+			<defaultValue property="value">0</defaultValue>
+			<defaultValue property="totalUnits">10</defaultValue>
+			<defaultValue property="vertical">false</defaultValue>
+			<defaultValue property="smallStepWidth">10</defaultValue>
 		</initialization>
 	</component>
 </sdkExtension>
