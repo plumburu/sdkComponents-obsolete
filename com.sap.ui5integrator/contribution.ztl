@@ -1,160 +1,30 @@
-class com.sap.sample.ui5.ApplicationHeader extends Component {
-	
-	/* Sets the user name that is displayed beside the welcome text. */
-	void setUserName(/* User name */ String userName) {*
-		this.userName = userName;	
-	*}
-	
-	/* Returns the user name that is displayed beside the welcome text. */
-	String getUserName() {*
-		return this.userName;	
-	*}
+class com.sap.ui5integrator.Receiver extends Component {
 
-	/* Sets the text that is displayed beside the logo in the application header. */
-	void setLogoText(/* Logo text */ String logoText) {*
-		this.logoText = logoText;	
-	*}
-	
-	/* Returns the text that is displayed beside the logo in the application header. */
-	String getLogoText() {*
-		return this.logoText;	
-	*}
-}
 
-class com.sap.sample.ui5.ColorPicker extends Component {
-	
-	/* Sets the picked color. */
-	void setColor(/* Color value */ String colorString) {*
-		this.colorString = colorString;
-	*}
-	
-	/* Returns the picked color. */
-	String getColor() {*
-		return this.colorString;
-	*}
-}
 
-class com.sap.sample.ui5.FormattedTextView extends Component {
-	
-	/* Sets the HTML text. */
-	void setHtmlText(/* HTML text */ String htmlText) {*
-		this.htmlText = htmlText;	
-	*}
-	
-	/* Returns the HTML text. */
-	String getHtmlText() {*
-		return this.htmlText;	
-	*}
-}
+/* Sets the param1. */
+	void setparm1(/* param1  String  */  String text) {*
+		this.parm1 = text;
+	*}	
 
-class com.sap.sample.ui5.Paginator extends Component {
-	
-	/* Sets the current page number. */
-	void setCurrentPage(/* Current page number */ int currentPage) {*
-		this.currentPage = currentPage;	
+	/* Returns the  parm1 . */
+	 String getparm1 ( string text  )  {*
+	  var x= JSON.parse(this.parm1);
+	  
+	   var  a = x[text];
+	 //  APPLICATION.alert(" a is  " + a ); // debug
+	   return a ;
 	*}
 	
-	/* Returns the current page number. */
-	int getCurrentPage() {*
-		return this.currentPage;	
-	*}
+	/* Sets the Origin URL  */
+	void setURL(/* URL  String  */  String text) {*
+		this.url = text;
+	*}	
 
-	/* Sets the overall number of pages that are embedded into the parent control. */
-	void setNumberOfPages(/* Overall number of pages */ int numberOfPages) {*
-		this.numberOfPages = numberOfPages;	
+	/* Returns the  URL . */
+	String getURL() {*
+		return this.url;
 	*}
 	
-	/* Returns the overall number of pages that are embedded into the parent control. */
-	int getNumberOfPages() {*
-		return this.numberOfPages;	
-	*}
-}
-
-class com.sap.sample.ui5.ProgressIndicator extends Component {
-
-	/* Sets the percentage value of the progress bar. */
-	void setPercentValue(/* Percent value */ int percentValue) {*
-		this.percentValue = percentValue;	
-	*}
 	
-	/* Returns the percentage value of the progress bar. */
-	int getPercentValue() {*
-		return this.percentValue;	
-	*}
-	
-	/* Sets the text value displayed in the bar. */
-	void setDisplayValue(/* Display value */ String displayValue) {*
-		this.displayValue = displayValue;	
-	*}
-	
-	/* Returns the text value displayed in the bar. */
-	String getDisplayValue() {*
-		return this.displayValue;	
-	*}
-}
-
-class com.sap.sample.ui5.RatingIndicator extends Component {
-
-	/* Sets the rating value. */
-	void setValue(/* Rating value */ float value) {*
-		this.value = value;	
-	*}
-	
-	/* Returns the rating value. */
-	float getValue() {*
-		return this.value;	
-	*}
-}
-
-class com.sap.sample.ui5.Slider extends Component {
-
-	/* Sets the minimum value. */
-	void setMin(/* Minimum value */ float min) {*
-		this.min = min;
-	*}
-	
-	/* Returns the minimum value. */
-	float getMin() {*
-		return this.min;
-	*}
-
-	/* Sets the maximum value. */
-	void setMax(/* Maximum value */ float max) {*
-		this.max = max;
-	*}
-	
-	/* Returns the maximum value. */
-	float getMax() {*
-		return this.max;
-	*}
-
-	/* Sets the value. */
-	void setValue(/* Value */ float value) {*
-		this.value = value;
-	*}
-	
-	/* Returns the value. */
-	float getValue() {*
-		return this.value;
-	*}
-	
-	/* Sets the total units value. */
-	void setTotalUnits(/* Total units value */ int totalUnits) {*
-		this.totalUnits = totalUnits;
-	*}
-	
-	/* Returns the total units value. */
-	int getTotalUnits() {*
-		return this.totalUnits;
-	*}
-
-	/* Sets the small step width value. */
-	void setSmallStepWidth(/* Small step width value */ float smallStepWidth) {*
-		this.smallStepWidth = smallStepWidth;
-	*}
-	
-	/* Returns the small step width value. */
-	float getSmallStepWidth() {*
-		return this.smallStepWidth;
-	*}
-}
+	}
