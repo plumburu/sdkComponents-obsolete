@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: c3
+Bundle-SymbolicName: com.sap.c3;singleton:=true
+Bundle-Version: 16.4.0.qualifier
+Require-Bundle: com.sap.ip.bi.zen.rt.components.sdk.eclipse
+Bundle-Vendor: SAP

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.sap.c3"
+	title="c3"
+	version="16.4"
+	vendor="SAP">
+	<component
+		id="Frequency"
+		title="c3 frequency chart"
+		icon="res/sparkline.png"
+		handlerType="div"
+    modes="commons m"
+		databound="true">
+		<requireJs modes="commons m">res/js/component</requireJs>
+		<property
+			id="data"
+			title="Data Series"
+			type="ResultCellList"
+			group="DataBinding">
+			<option name="fillMetadataProperty" value="false"/>
+			<option name="includeTuples" value="false"/>
+			<option name="includeResults" value="false"/>
+		</property>
+		<property
+			id="css"
+			title="CSS Style"
+			type="String"
+			bindable="true"/>
+		<property
+			id="onClick"
+			title="on Click"
+			type="ScriptText"
+			group="Events"/><property id="token" type="ResultCellSet"
+			title="Data " bindable="true" group="DataBinding" tooltip="select rows and columns for graph ">
+</property>
+		<initialization>
+			<defaultValue property="LEFT_MARGIN">40</defaultValue>
+			<defaultValue property="TOP_MARGIN">40</defaultValue>
+			<defaultValue property="WIDTH">100</defaultValue>
+			<defaultValue property="HEIGHT">10</defaultValue>
+			<defaultValue property="css">stroke:steelblue;stroke-width:1;fill:none;</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>
